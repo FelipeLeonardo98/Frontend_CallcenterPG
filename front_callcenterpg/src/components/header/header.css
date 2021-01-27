@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Fraunces:400');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+#mainHeader{
+width: 100%;
+height: 40px;
+background-color: rgb(48, 79, 219);
+color: #ffffff;
+text-align: center;
+font-size: 24px;
+font-family: fraunces;
+box-shadow: 0 0 1em black;
+padding-top: 5px;
+
+}
