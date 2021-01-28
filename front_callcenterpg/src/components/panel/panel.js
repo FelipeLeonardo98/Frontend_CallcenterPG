@@ -10,10 +10,18 @@ class Panel extends Component{
 
 async componentDidMount(){
     const response = await api.get('/categories');
-    //const responseAll = await api.get('/all');
+   // const responseAll = await api.get('/all');
     this.setState({datas: response.data});
     // datas received api response
-   // console.log(response.data);
+    console.log(response.data);
+   // this.setState({datas: responseAll.data});
+   // console.log(responseAll.data);
+
+}
+
+
+allreturn(){
+     return console.log("return");
 }
 
 renderOption(){
@@ -29,7 +37,7 @@ render(){
     return(
         <div>
         <span>Selecione a situação</span>
-            <select id="list">
+            <select id="list" onChange={this.allreturn()}>
                 {this.renderOption()}
             </select>
         </div>

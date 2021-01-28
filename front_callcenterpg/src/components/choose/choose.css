@@ -1,0 +1,46 @@
+
+.choose_option{
+    width: 200px;
+    height: 200px;
+    border: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    line-height: 200px;
+    
+    }
+    
+
+    #one{
+    margin-top: 15px;
+    background-color: blue;
+    color: #fff;
+    font-size: 30px;
+    }
+    
+    
+    .choose_option:hover{
+    width: 185px;
+    height: 185px;
+    line-height: 185px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    
+    
+    #one:hover{
+    background-color: #00FA9A;
+    
+    }
+
+   #two{
+        margin-top: 10px;
+        border: 1px solid black;
+        color: black;
+        font-size: 25px;
+        }
+        
+        #two:hover{
+        background-color: #00FA9A;
+        color: white;
+        font-size: 25px
+        }
