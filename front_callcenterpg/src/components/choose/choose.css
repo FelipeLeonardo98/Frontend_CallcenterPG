@@ -7,6 +7,7 @@
     margin-right: auto;
     text-align: center;
     line-height: 200px;
+    border-radius: 6px;
     
     }
     
@@ -15,7 +16,7 @@
     margin-top: 15px;
     background-color: blue;
     color: #fff;
-    font-size: 30px;
+    font-size: 30px;    
     }
     
     

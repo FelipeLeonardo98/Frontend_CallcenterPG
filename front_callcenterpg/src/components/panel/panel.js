@@ -4,9 +4,14 @@ import api from '../../service/api';
 import './panel.css';
 
 class Panel extends Component{
-    state={
-        datas: [],
+    constructor(props){
+        super(props);
+
+        this.state={
+            datas: [],
+        }
     }
+    
 
 async componentDidMount(){
     const response = await api.get('/categories');
@@ -20,15 +25,19 @@ async componentDidMount(){
 }
 
 
-allreturn(){
-     return console.log("return");
-}
-
 renderOption(){
     return this.state.datas.map(data => {
         return <option key={data} value={data}>{data}</option>
     })
 }
+
+
+async componentDidUpdate(response){
+   await console.log("oi");
+
+   
+}
+
 
 render(){
    // const {datas} = this.state;
@@ -37,19 +46,17 @@ render(){
     return(
         <div>
         <span>Selecione a situação</span>
-            <select id="list" onChange={this.allreturn()}>
+            <select id="list">
                 {this.renderOption()}
             </select>
+            
         </div>
-        
-        
-        
+       
     )
    
 }
-/*  <select>
-                    <option value="{data._id}">{data.category}</option>
-                </select>*/
+
+
 
 }
 

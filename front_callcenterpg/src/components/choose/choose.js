@@ -1,6 +1,6 @@
 // getting imports
 import React from 'react';
-import css from './choose.css';
+import  './choose.css';
 import { Link } from "react-router-dom";
 
 
@@ -9,14 +9,14 @@ function Choose() {
     return (
         <>
         
-            <div class="choose_option" id="one">
+            <div className="choose_option" id="one">
               
                 <span>Ramais</span>  
             </div>
             
 
-        <Link to={"/painel"} style={{textDecoration:"none",padding:"5px"}}>
-            <div class="choose_option" id="two">
+        <Link to={"/painel"} dado="infor" style={{textDecoration:"none",padding:"5px"}}>
+            <div className="choose_option" id="two">
               <span>Monitoramentos</span>  
             </div>
         </Link>
