@@ -1,63 +1,41 @@
 // Imports
-import React, {Component} from 'react';
+import React, { useEffect, useState } from 'react';
 import api from '../../service/api';
 import './panel.css';
 
-class Panel extends Component{
-    constructor(props){
-        super(props);
+export default function Panel(){
+    const [categories, setCategories] = useState(['']);
 
-        this.state={
-            datas: [],
-        }
+useEffect( () => {
+    async function fetchData(){
+        const response = await api.get('/categories');
+         setCategories(response.data);
     }
+  
+    fetchData();
     
+}, []);
 
-async componentDidMount(){
-    const response = await api.get('/categories');
-   // const responseAll = await api.get('/all');
-    this.setState({datas: response.data});
-    // datas received api response
-    console.log(response.data);
-   // this.setState({datas: responseAll.data});
-   // console.log(responseAll.data);
+ async function myFunction(e){
+    const search = e.target.value;
+    try{
+        const response = await api.post('/bycategory', {search: search});
 
-}
+         console.log(response.data);
+    }catch(error){
+        console.warn(error);
+    }
 
-
-renderOption(){
-    return this.state.datas.map(data => {
-        return <option key={data} value={data}>{data}</option>
-    })
-}
-
-
-async componentDidUpdate(response){
-   await console.log("oi");
-
-   
-}
-
-
-render(){
-   // const {datas} = this.state;
-   // console.log(datas);
-<span>Selecione a situação</span>
+ }
     return(
-        <div>
+        <>
         <span>Selecione a situação</span>
-            <select id="list">
-                {this.renderOption()}
-            </select>
-            
-        </div>
-       
+           <select onChange={myFunction}>
+           {categories.map((values, index ) => {
+               return <option key={index}  value={values}>{values}</option>
+           } )}
+           </select>
+        </>
     )
-   
 }
 
-
-
-}
-
-export default Panel;
