@@ -6,7 +6,9 @@ import './Select.css';
 
 export default function Select() {
     const [categories, setCategories] = useState(['']);
-    const [descriptions, setDescriptions] = useState(['']);
+    // const [descriptions, setDescriptions] = useState(['']);
+    var vetor = [];
+    // var vetorSplit;
     // const response = {};
 
     useEffect(() => {
@@ -25,12 +27,19 @@ export default function Select() {
             const { data } = await api.post('/bycategory', { search: search });
             // console.log(data);
 
+
             data.map((datas, index) => {
-                return setDescriptions(datas.description);
-                //console.log(datas.description)
+                //  return (console.log(`Index: ${index} - Descrição: ${datas.description}`))
+                return (vetor.push(datas.description))
+
+                // setDescriptions(datas.description);
+
             })
 
-
+            // console.log(`Valor do useState: ${descriptions}`)
+            //var vetorSplit = vetor.split(",");
+            console.log(`Retorno do vetor: ${vetor}`);
+            //  console.log("outro retorno: " + vetorSplit);
 
         } catch (error) {
             console.warn(error);
@@ -49,10 +58,10 @@ export default function Select() {
                     )
                 })}
             </select> <br /> <hr />
-            <div>
-                {descriptions}
-            </div>
-            {console.log(descriptions)}
+            {
+                console.log(vetor)
+            }
+
         </>
     )
 }
