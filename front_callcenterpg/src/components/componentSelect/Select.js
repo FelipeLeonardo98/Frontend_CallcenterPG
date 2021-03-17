@@ -6,7 +6,7 @@ import './Select.css';
 
 export default function Select() {
     const [categories, setCategories] = useState(['']);
-    // const [descriptions, setDescriptions] = useState(['']);
+    const [descriptions, setDescriptions] = useState(['']);
     var vetor = [];
     // var vetorSplit;
     // const response = {};
@@ -24,28 +24,50 @@ export default function Select() {
     async function MyFunction(e) {
         const search = e.target.value;
         try {
-            const { data } = await api.post('/bycategory', { search: search });
-            // console.log(data);
-
-
-            data.map((datas, index) => {
-                //  return (console.log(`Index: ${index} - Descrição: ${datas.description}`))
-                return (vetor.push(datas.description))
-
-                // setDescriptions(datas.description);
-
+            const result = await api.post('/bycategory', { search: search });
+            const apoio = result.data;
+            //console.log(result.data);
+            //setDescriptions(data.description);
+            // console.log(`Teste: ${descriptions}`);
+            apoio.map((datas) => {
+                //     vetor.push(datas.description)
+                setDescriptions(datas.description);
+                return (console.log(`Teste: ${descriptions}`))
             })
-
-            // console.log(`Valor do useState: ${descriptions}`)
-            //var vetorSplit = vetor.split(",");
-            console.log(`Retorno do vetor: ${vetor}`);
-            //  console.log("outro retorno: " + vetorSplit);
 
         } catch (error) {
             console.warn(error);
         }
 
     }
+
+
+    /* async function MyFunction(e) {
+         const search = e.target.value;
+         try {
+             const { data } = await api.post('/bycategory', { search: search });
+             // console.log(data);
+ 
+ 
+             data.map((datas, index) => {
+                 //  return (console.log(`Index: ${index} - Descrição: ${datas.description}`))
+                 //   return (vetor.push(datas.description))
+ 
+                 setDescriptions(datas.description);
+                 return (console.log(`Retorno do map: ${descriptions}`))
+ 
+             })
+ 
+             // console.log(`Valor do useState: ${descriptions}`)
+             //var vetorSplit = vetor.split(",");
+             console.log(`Retorno do vetor: ${descriptions}`);
+             //  console.log("outro retorno: " + vetorSplit);
+ 
+         } catch (error) {
+             console.warn(error);
+         }
+ 
+     }*/
 
     return (
         <>
@@ -58,9 +80,9 @@ export default function Select() {
                     )
                 })}
             </select> <br /> <hr />
-            {
-                console.log(vetor)
-            }
+            <ul>
+
+            </ul>
 
         </>
     )
