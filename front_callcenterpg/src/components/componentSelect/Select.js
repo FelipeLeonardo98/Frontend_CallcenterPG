@@ -2,14 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../service/api';
 import './Select.css';
-//import Panel from '../componentPanel/Panel';
+import Panel from '../componentPanel/Panel';
 
 export default function Select() {
     const [categories, setCategories] = useState(['']);
     const [descriptions, setDescriptions] = useState(['']);
-    // var vetor = [];
-    // var vetorSplit;
-    // const response = {};
 
     useEffect(() => {
         async function fetchData() {
@@ -46,14 +43,15 @@ export default function Select() {
                     )
                 })}
             </select> <br /> <hr />
-            <ul>
+            <Panel messages={descriptions} />
+            {/* <ul>
                 {
                     descriptions.map((data, id) => {
                         return (<li key={id}>{data}</li>)
 
                     })
                 }
-            </ul>
+            </ul> */}
 
         </>
     )
