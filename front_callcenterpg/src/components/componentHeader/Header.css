@@ -4,13 +4,13 @@
 
 #mainHeader{
 width: 100%;
-height: 45px;
+height: 50px;
 background-color: rgb(48, 79, 219);
 color: #ffffff;
 border-radius: 6px;
 text-align: center;
 font-size: 24px;
-font-family: fraunces;
+font-family: fraunces; 
 box-shadow: 0 0 1em black;
-padding-top: 5px;
+padding-top: 8px;
 }

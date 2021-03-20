@@ -34,24 +34,18 @@ export default function Select() {
 
     return (
         <>
-            <span>Selecione a situação</span>
-            <select onChange={MyFunction}>
-                <option selected disabled> Categoria </option>
-                {categories.map((values, index) => {
-                    return (
-                        <option key={index} value={values}>{values}</option>
-                    )
-                })}
-            </select> <br /> <hr />
+            <div className="selectArea">
+                <span style={{ fontSize: '20px' }}>Selecione a situação: </span>
+                <select onChange={MyFunction} className="list">
+                    <option defaultValue="Categoria"> Categoria </option>
+                    {categories.map((values, index) => {
+                        return (
+                            <option key={index} value={values}>{values}</option>
+                        )
+                    })}
+                </select> <br /> <hr />
+            </div>
             <Panel messages={descriptions} />
-            {/* <ul>
-                {
-                    descriptions.map((data, id) => {
-                        return (<li key={id}>{data}</li>)
-
-                    })
-                }
-            </ul> */}
 
         </>
     )

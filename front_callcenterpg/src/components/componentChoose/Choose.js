@@ -15,7 +15,7 @@ export default function Choose() {
             </div>
 
 
-            <Link to={"/painel"} dado="infor" style={{ textDecoration: "none", padding: "5px" }}>
+            <Link to={"/painel"} style={{ textDecoration: "none", padding: "5px" }}>
                 <div className="choose_option" id="two">
                     <span>Monitoramentos</span>
                 </div>

@@ -1,0 +1,14 @@
+.tableStyle{
+    box-shadow: 0 0 1em black;
+    margin: 0 1px 0 1px;
+}
+
+.iconsStyle{
+    color:rgb(14, 95, 218);
+   
+}
+
+.iconsStyle:hover{
+    color: rgb(9, 245, 9);
+    font-size: 18px;
+}

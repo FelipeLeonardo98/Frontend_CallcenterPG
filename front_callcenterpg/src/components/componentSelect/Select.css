@@ -1,4 +1,18 @@
-#list{
-    width: 180px;
+.selectArea{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.selectArea .list{
+    width: 220px;
     height: 30px;
+    border-radius: 6px;
+    text-align: center;
+    outline: none;
+}
+
+.selectArea .list:focus{
+    border: 2px solid rgb(9, 245, 9);
+    
 }
