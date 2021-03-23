@@ -22,9 +22,10 @@ export default function Select() {
         const search = e.target.value;
         try {
             const { data } = await api.post('/bycategory', { search: search });
-            const descriptionMap = data.map(({ description }) => description)
-            // < Component args={descriptionMap} />
-            setDescriptions(descriptionMap);
+            // console.log(data);
+            //const descriptionMap = data.map(({ description }) => description) old, only has description
+            // const descriptionMap = data.map(({ description }) => description._id); failed
+            setDescriptions(data);
 
         } catch (error) {
             console.warn(error);

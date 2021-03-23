@@ -12,7 +12,7 @@ const Routes = () => (
         <Switch>
             <Route exact path="/" component={Choose} />
             <Route exact path="/painel" component={Select} />
-            <Route exact path="/update/:param" component={Update} />
+            <Route exact path="/update/:_id" component={Update} />
 
         </Switch>
     </BrowserRouter>
