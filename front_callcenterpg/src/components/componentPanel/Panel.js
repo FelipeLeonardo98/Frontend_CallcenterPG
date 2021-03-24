@@ -10,7 +10,7 @@ export default function Panel(props) {
 
     return (
         <div style={{ margin: '0 8px 0 8px' }}>
-            {console.log(props.messages)}
+            { /* console.log(props.messages) */}
             <table className="table tableStyle">
                 <thead className="thead-dark">
                     <tr>
