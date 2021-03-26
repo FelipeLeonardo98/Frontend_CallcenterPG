@@ -30,7 +30,7 @@ export default function Panel(props) {
                                     <td>{description}</td>
                                     <td>
                                         <Link to={`/update/${_id}`}  >
-                                            <i className="bi bi-tools iconsStyle"></i>
+                                            <i className="bi bi-pencil-square iconsStyle"></i>
                                         </Link>
                                     </td>
                                     <td><i className="bi bi-trash iconsStyle"></i></td>

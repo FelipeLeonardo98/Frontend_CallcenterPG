@@ -4,32 +4,42 @@ import api from '../../service/api';
 
 
 export default function Update(props) {
-    const searchKey = props.match.params._id;
-    const [selected, setSelected] = useState(['']);
+    var index = props.match.params._id;
+    const [newDescription, setNewDescription] = useState(['']);
 
     useEffect(() => {
         async function fetchData() {
-            const { data } = await api.post('/selectone', { _id: searchKey });
-            setSelected(data);
-            // console.log(selected);
+            try {
+                const { data } = await api.post('/selectone', { _id: index });
+                setNewDescription(data);
+            } catch (error) {
+                console.warn(error)
+            }
+
         }
 
         fetchData();
 
     }, []);
 
-    async function executeUpdate(e) {
-        const { data } = await api.post(`/update/${searchKey}`, {});
+    async function executeUpdate(event) {
+
+        try {
+            const newDescriptionValue = event.target.value;
+            const { data } = await api.put(`/update/${index}`, { description: newDescriptionValue });
+            console.log(`Opa, deu certo ${data}`)
+        } catch (error) {
+            console.warn(error)
+        }
+
     }
-
-
-
-
-
     return (
         <div>
-            <input type="text" value={selected.description} />
-            <button onClick={executeUpdate()}> UPDATE NOW</button>
+            <form>
+                <input type="text" defaultValue={newDescription.description} size="300" onBlur={executeUpdate} /> <br ></br>
+                <button onClick={executeUpdate}> UPDATE NOW </button>
+            </form>
+
         </div>
     )
 }
