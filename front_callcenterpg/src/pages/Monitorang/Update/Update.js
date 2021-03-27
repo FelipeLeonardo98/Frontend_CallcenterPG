@@ -1,0 +1,87 @@
+import React, { useEffect, useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Update.css';
+import api from '../../../service/api';
+
+export default function Update(props) {
+    const index = props.match.params._id;
+    const [newDescription, setNewDescription] = useState(['']);
+    const [categories, setCategories] = useState(['']);
+
+    //load register, searching by parameter
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                const { data } = await api.post('/selectone', { _id: index });
+                console.log(data);
+                setNewDescription(data);
+            } catch (error) {
+                console.warn(error)
+            }
+        }
+
+        fetchData();
+
+    }, []);
+
+    //load categories, from API /categories
+    useEffect(() => {
+        async function loadCategories() {
+            try {
+                const responseCategory = await api.get('/categories');
+                setCategories(responseCategory.data);
+            } catch (error) {
+                console.warn(error);
+            }
+        }
+
+        loadCategories();
+    }, []);
+
+
+    //Update API
+    async function executeUpdate(event) {
+
+        try {
+            const newValues = {
+                category: '',
+                description: ''
+            }
+            const { name, value } = event.target;
+            // const { data } = await api.put(`/update/${index}`, {});
+            // console.log({ name, value });
+            if (name === "listCategories") {
+                newValues.category = value;
+                const { data } = await api.put(`/update/${index}`, { category: newValues.category });
+                console.log("Category updated!")
+            } else if (name === "txtUpdate") {
+                newValues.description = value;
+                const { data } = await api.put(`/update/${index}`, { description: newValues.description });
+                console.log("Description updated");
+            }
+
+        } catch (error) {
+            console.warn(error)
+        }
+
+    }
+    return (
+        <div className="containerUpdate">
+            <h4>Alteração de descrição</h4>
+            <p id="updateTip">As informações são salvas automaticamente após clicar com o cursor em qualquer canto da tela.
+            <strong> Se atente na mensagem de sucesso ou falha.</strong>
+            </p>
+            <select name="listCategories" className="list" onChange={executeUpdate}>
+                <option defaultValue={newDescription.category}> {newDescription.category} </option>
+                {categories.map((values, index) => {
+                    return (
+                        <option key={index} value={values}>{values}</option>
+                    )
+                })}
+            </select> <br></br>
+            <textarea type="text" name="txtUpdate" defaultValue={newDescription.description} onBlur={executeUpdate} /> <br ></br>
+            {/* <button onClick={executeUpdate}> UPDATE NOW </button> */}
+
+        </div>
+    )
+}

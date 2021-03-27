@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Choose from './../components/componentChoose/Choose';
 import Select from './../components/componentSelect/Select';
-import Update from '../pages/Monitorang/Update';
+import Update from '../pages/Monitorang/Update/Update';
 // import Panel from './../components/componentPanel/Panel'
 
 const Routes = () => (

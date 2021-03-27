@@ -1,0 +1,36 @@
+.containerUpdate{
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.containerUpdate textarea{
+    margin-top: 15px;
+    width: 450px;
+    height: 200px;
+    text-align: center;
+    border-color: rgb(48, 83, 240);
+    border-radius: 3px;
+    outline: none;
+}
+
+.containerUpdate textarea:focus{
+    border: 1px solid rgb(9, 245, 9);
+    box-shadow: 0 0 1em rgb(9, 245, 9);
+}
+
+.containerUpdate .list{
+    width: 220px;
+    height: 30px;
+    border-radius: 6px;
+    border-color: rgb(48, 83, 240);
+    text-align: center;
+    outline: none;
+}
+
+.containerUpdate .list:focus{
+    border: 2px solid rgb(9, 245, 9);
+    
+}
+
+
