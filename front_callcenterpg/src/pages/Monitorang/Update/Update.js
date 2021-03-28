@@ -7,13 +7,13 @@ export default function Update(props) {
     const index = props.match.params._id;
     const [newDescription, setNewDescription] = useState(['']);
     const [categories, setCategories] = useState(['']);
+    const [isUpdatedSuccess, setIsUpdatedSuccess] = useState([]);
 
     //load register, searching by parameter
     useEffect(() => {
         async function fetchData() {
             try {
                 const { data } = await api.post('/selectone', { _id: index });
-                console.log(data);
                 setNewDescription(data);
             } catch (error) {
                 console.warn(error)
@@ -48,16 +48,16 @@ export default function Update(props) {
                 description: ''
             }
             const { name, value } = event.target;
-            // const { data } = await api.put(`/update/${index}`, {});
-            // console.log({ name, value });
             if (name === "listCategories") {
                 newValues.category = value;
-                const { data } = await api.put(`/update/${index}`, { category: newValues.category });
-                console.log("Category updated!")
+                await api.put(`/update/${index}`, { category: newValues.category });
+                // console.log("Category updated!")
+                setIsUpdatedSuccess("Categoria foi atualizada com sucesso!");
             } else if (name === "txtUpdate") {
                 newValues.description = value;
-                const { data } = await api.put(`/update/${index}`, { description: newValues.description });
-                console.log("Description updated");
+                await api.put(`/update/${index}`, { description: newValues.description });
+                // console.log("Description updated");
+                setIsUpdatedSuccess("Descrição foi atualizada com sucesso!");
             }
 
         } catch (error) {
@@ -80,7 +80,11 @@ export default function Update(props) {
                 })}
             </select> <br></br>
             <textarea type="text" name="txtUpdate" defaultValue={newDescription.description} onBlur={executeUpdate} /> <br ></br>
-            {/* <button onClick={executeUpdate}> UPDATE NOW </button> */}
+            {
+                isUpdatedSuccess.length === 0 ? '' : <div class="alert alert-primary" role="alert">
+                    {isUpdatedSuccess}
+                </div>
+            }
 
         </div>
     )

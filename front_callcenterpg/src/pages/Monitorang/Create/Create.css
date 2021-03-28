@@ -1,0 +1,29 @@
+.containerCreate{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.containerNewCategory input{
+    margin-top: 15px;
+    width: 450px;
+    height: 50px;
+    text-align: center;
+    border-color: rgb(48, 83, 240);
+    border-radius: 3px;
+    outline: none;
+}
+
+.containerNewCategory textarea{
+    margin-top: 15px;
+    width: 450px;
+    height: 200px;
+    text-align: center;
+    border-color: rgb(48, 83, 240);
+    border-radius: 3px;
+    outline: none;
+}
+
+.containerNewCategory textarea:focus{
+    border: 1px solid rgb(9, 245, 9);
+    box-shadow: 0 0 1em rgb(9, 245, 9);
+}

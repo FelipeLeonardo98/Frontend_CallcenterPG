@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Choose from './../components/componentChoose/Choose';
 import Select from './../components/componentSelect/Select';
 import Update from '../pages/Monitorang/Update/Update';
-// import Panel from './../components/componentPanel/Panel'
+import Create from '../pages/Monitorang/Create/Create';
 
 const Routes = () => (
 
@@ -12,7 +12,9 @@ const Routes = () => (
         <Switch>
             <Route exact path="/" component={Choose} />
             <Route exact path="/painel" component={Select} />
+            <Route exact path="/create" component={Create} />
             <Route exact path="/update/:_id" component={Update} />
+
 
         </Switch>
     </BrowserRouter>
