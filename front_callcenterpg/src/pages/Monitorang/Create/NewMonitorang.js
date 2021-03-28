@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Create.css';
 import api from '../../../service/api';
+//Component
+import Register from './Register';
 
 export default function NewMonitorang(props) {
 
@@ -33,6 +35,7 @@ export default function NewMonitorang(props) {
                 })}
             </select> <br></br>
             <textarea type="text" name="txtMonitorang" placeholder="Digite o novo monitoramento" required /> <br ></br>
+            <Register />
 
 
         </div>

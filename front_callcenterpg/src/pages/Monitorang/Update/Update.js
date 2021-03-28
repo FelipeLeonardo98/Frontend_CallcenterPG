@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Update.css';
 import api from '../../../service/api';
+// Component
+import Alert from '../Alert/Alert';
 
 export default function Update(props) {
     const index = props.match.params._id;
@@ -81,9 +83,8 @@ export default function Update(props) {
             </select> <br></br>
             <textarea type="text" name="txtUpdate" defaultValue={newDescription.description} onBlur={executeUpdate} /> <br ></br>
             {
-                isUpdatedSuccess.length === 0 ? '' : <div class="alert alert-primary" role="alert">
-                    {isUpdatedSuccess}
-                </div>
+                isUpdatedSuccess.length === 0 ? '' : <Alert color="#82F266" message={isUpdatedSuccess} />
+
             }
 
         </div>
