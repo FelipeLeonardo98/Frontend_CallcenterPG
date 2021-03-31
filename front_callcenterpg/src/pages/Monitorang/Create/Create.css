@@ -92,3 +92,30 @@
     box-shadow: 0 0 1em rgb(9, 245, 9);
 }
 
+/* Responsive Settings */
+@media (max-width: 595px){
+
+    
+    .containerNewCategory input{
+        width: 300px;
+        height: 30px;
+        
+    }
+    
+    .containerNewCategory textarea{
+        width: 300px;
+        height: 150px;
+            
+        
+    }
+
+    .containerNewMonitorang textarea{
+       
+        width: 300px;
+        height: 150px;
+            
+      
+    }
+    
+}
+    

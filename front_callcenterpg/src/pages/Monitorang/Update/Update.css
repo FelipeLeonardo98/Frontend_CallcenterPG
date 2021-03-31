@@ -33,4 +33,16 @@
     
 }
 
+/* Responsive Settings */
+@media (max-width: 595px){
+
+    
+.containerUpdate textarea{
+ 
+    width: 300px;
+    height: 150px;
+   
+}
+
+}
 
