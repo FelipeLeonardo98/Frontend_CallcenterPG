@@ -24,7 +24,7 @@ export default function Update(props) {
 
         fetchData();
 
-    }, []);
+    }, [index]);
 
     //load categories, from API /categories
     useEffect(() => {
