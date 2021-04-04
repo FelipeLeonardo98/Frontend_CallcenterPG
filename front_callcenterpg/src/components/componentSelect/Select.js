@@ -18,7 +18,7 @@ export default function Select() {
 
     }, []);
 
-    async function MyFunction(e) {
+    async function getCategories(e) {
         const search = e.target.value;
         try {
             const { data } = await api.post('/bycategory', { search: search });
@@ -37,7 +37,7 @@ export default function Select() {
         <>
             <div className="selectArea">
                 <span style={{ fontSize: '20px' }}>Selecione a situação: </span>
-                <select onChange={MyFunction} className="list">
+                <select onChange={getCategories} className="list">
                     <option defaultValue="Categoria"> Categoria </option>
                     {categories.map((values, index) => {
                         return (
@@ -46,7 +46,7 @@ export default function Select() {
                     })}
                 </select> <br /> <hr />
             </div>
-            <Panel messages={descriptions} />
+            <Panel descriptions={descriptions} />
 
         </>
     )

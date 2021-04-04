@@ -4,9 +4,9 @@ import './Create.css';
 import api from '../../../service/api';
 //Component
 import RegisterMonitorang from './RegisterMonitorang';
+import ButtonReturn from '../../../components/ButtonReturn/ButtonReturn';
 
 export default function NewMonitorang(props) {
-    // const gotCategory;
     const [categories, setCategories] = useState(['']);
 
     const inputValue = {
@@ -58,7 +58,7 @@ export default function NewMonitorang(props) {
             </select> <br></br>
             <textarea type="text" name="txtMonitorang" placeholder="Digite o novo monitoramento" onBlur={getValue} required /> <br ></br>
             <RegisterMonitorang objectValue={inputValue} />
-
+            <ButtonReturn />
 
         </div>
     )

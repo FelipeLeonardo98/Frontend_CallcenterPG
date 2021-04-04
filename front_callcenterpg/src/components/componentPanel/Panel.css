@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .tableStyle{
     box-shadow: 0 0 1em black;
+}
+
+.tableHeadText{
+font-family: Poppins;
 }
 
 .iconsStyle{

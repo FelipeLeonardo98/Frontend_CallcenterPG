@@ -15,3 +15,16 @@
 .buttonCreate:hover{
     box-shadow: 0 0 1em rgb(32, 22, 173);
 }
+
+/* Responsive Settings */
+@media (max-width: 595px){
+
+    
+    .buttonCreate{
+        margin: 0 auto 10px auto;
+        float: none;
+       
+    
+    }
+
+}

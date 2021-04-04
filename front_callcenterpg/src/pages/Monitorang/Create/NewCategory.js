@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Create.css';
 // Component
 import RegisterCategory from './RegisterCategory';
+import ButtonReturn from '../../../components/ButtonReturn/ButtonReturn';
 
 export default function NewCategory(props) {
     const inputValue = {
@@ -26,8 +27,6 @@ export default function NewCategory(props) {
 
     }
 
-
-
     return (
         <div className="containerNewCategory">
             <form>
@@ -35,7 +34,7 @@ export default function NewCategory(props) {
                 <textarea type="text" name="txtDescription" placeholder="Digite o novo monitoramento" onBlur={getValue} required /> <br ></br>
                 <RegisterCategory objectValue={inputValue} />
             </form>
-
+            <ButtonReturn />
         </div>
     )
 }

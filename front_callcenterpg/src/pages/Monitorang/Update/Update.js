@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Update.css';
 import api from '../../../service/api';
-// Component
+// Components
 import Alert from '../Alert/Alert';
+import ButtonReturn from '../../../components/ButtonReturn/ButtonReturn';
 
 export default function Update(props) {
     const index = props.match.params._id;
@@ -53,12 +54,10 @@ export default function Update(props) {
             if (name === "listCategories") {
                 newValues.category = value;
                 await api.put(`/update/${index}`, { category: newValues.category });
-                // console.log("Category updated!")
                 setIsUpdatedSuccess("Categoria foi atualizada com sucesso!");
             } else if (name === "txtUpdate") {
                 newValues.description = value;
                 await api.put(`/update/${index}`, { description: newValues.description });
-                // console.log("Description updated");
                 setIsUpdatedSuccess("Descrição foi atualizada com sucesso!");
             }
 
@@ -69,7 +68,7 @@ export default function Update(props) {
     }
     return (
         <div className="containerUpdate">
-            <h4>Alteração de descrição</h4>
+            <h4>Alteração de Monitoramento</h4>
             <p id="updateTip">As informações são salvas automaticamente após clicar com o cursor em qualquer canto da tela.
             <strong> Se atente na mensagem de sucesso ou falha.</strong>
             </p>
@@ -86,6 +85,8 @@ export default function Update(props) {
                 isUpdatedSuccess.length === 0 ? '' : <Alert color="#82F266" message={isUpdatedSuccess} />
 
             }
+
+            <ButtonReturn />
 
         </div>
     )

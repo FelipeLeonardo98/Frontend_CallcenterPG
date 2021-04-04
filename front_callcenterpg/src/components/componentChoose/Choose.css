@@ -1,50 +1,78 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Fraunces:400');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 .choose_option{
+    position: relative;
     width: 200px;
     height: 200px;
+    font-family: Fraunces;
     border: 2px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 0 auto;
     text-align: center;
     line-height: 200px;
     border-radius: 6px;
+    box-shadow: 0 0 1em rgb(32, 25, 25);
     
     }
-    
 
+    .choose_option:hover{
+        width: 210px;
+        height: 210px;
+        line-height: 210px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+    
     #one{
     margin-top: 30px;
-    background-color: blue;
+    background-color: rgb(35, 35, 179);
     color: #fff;
     font-size: 30px;    
     }
     
-    
-    .choose_option:hover{
-    width: 185px;
-    height: 185px;
-    line-height: 185px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    
-    #one:hover{
-    background-color: #00FA9A;
-    
-    }
-
-   #two{
+    #two{
+        background-color:rgb(231, 231, 231);
         margin-top: 10px;
-        border: 1px solid black;
         color: black;
         font-size: 25px;
+    }
+    
+     
+        .overlay{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: .5s ease;
+            background-color: #00FA9A;
         }
-        
-        #two:hover{
-        background-color: #00FA9A;
-        color: white;
-        font-size: 25px
-        }
+
+        .choose_option:hover .overlay{
+            opacity: 1;
+            border-radius: 6px;
+        } 
+
+        .textOverlay{
+            color: white;
+            font-size: 25px;
+            font-weight: bold;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+
+          #one .textOverlay{
+            font-size: 30px;
+            
+            }
 
         /* Responsive Settings */
         @media(max-width: 595px){

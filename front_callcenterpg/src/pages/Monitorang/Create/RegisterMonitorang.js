@@ -15,7 +15,7 @@ export default function RegisterMonitorang(props) {
                 setNotification("PREENCHA TODOS OS CAMPOS!")
             } else {
                 await api.post('/insert', { category: objectValue.category, description: objectValue.description });
-                setNotification("NOVA CATEGORIA COM MONITORAMENTO SALVA COM SUCESSO!")
+                setNotification("NOVO MONITORAMENTO SALVO COM SUCESSO!")
             }
             // objectValue.category = "";
             objectValue.description = "";

@@ -1,0 +1,30 @@
+.buttonReturn{
+    width: 260px;
+    height: 35px;
+    margin: 10px auto 0 auto;
+    padding: 4px 4px 14px 4px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px 6px 6px 6px;
+    background-color: rgb(116, 11, 116);
+   
+}
+
+
+.buttonReturn:hover{
+    box-shadow: 0 0 1em rgb(9, 245, 9);
+    
+}
+
+/* Responsive Settings */
+@media (max-width: 595px){
+
+    
+    .buttonReturn{
+        margin: 15px auto 0 auto;
+        width: 210px;
+    
+    }
+
+}
