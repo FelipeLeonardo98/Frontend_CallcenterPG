@@ -36,7 +36,7 @@ export default function Select() {
     return (
         <>
             <div className="selectArea">
-                <span style={{ fontSize: '20px' }}>Selecione a situação: </span>
+                <span style={{ fontSize: '20px' }}>Selecione a situação: </span> <br></br>
                 <select onChange={getCategories} className="list">
                     <option defaultValue="Categoria"> Categoria </option>
                     {categories.map((values, index) => {
